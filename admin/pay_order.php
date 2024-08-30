@@ -105,7 +105,7 @@ require_once('partials/_head.php');
                     <label>Payment Method</label>
                     <select class="form-control" name="pay_method">
                         <option selected>Cash</option>
-                        <option>Paypal</option>
+                        <option>MOMO</option>
                     </select>
                   </div>
                 </div>
