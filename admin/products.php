@@ -89,7 +89,7 @@ require_once('partials/_head.php');
                             Delete
                           </button>
                         </a>
-                        <a href="update_product.php?update=<?php echo $prod->prod_id; ?>">
+                        <a href="javascript:void(0);" onclick="confirmDeletion('<?php echo $rows->prod_id; ?>')">
                           <button class="btn btn-sm btn-primary">
                             <i class="fas fa-edit"></i>
                             Update
@@ -110,6 +110,17 @@ require_once('partials/_head.php');
   </div>
   <!-- Argon Scripts -->
   <?php require_once('partials/_scripts.php'); ?>
+
+<script>
+function confirmDeletion(productId) {
+    const userConfirmed = confirm("Are you sure you want to delete this product?");
+    
+    if (userConfirmed) {
+        window.location.href = `?delete=${productId}`;
+    }
+}
+</script>
 </body>
+
 
 </html>
