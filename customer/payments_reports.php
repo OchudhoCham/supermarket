@@ -52,7 +52,7 @@ require_once('partials/_head.php');
                                 <tbody>
                                     <?php
                                     $customer_id = $_SESSION['customer_id'];
-                                    $ret = "SELECT * FROM  rpos_payments WHERE customer_id ='$customer_id' ORDER BY `created_at` DESC ";
+                                    $ret = "SELECT * FROM  sms_payments WHERE customer_id ='$customer_id' ORDER BY `created_at` DESC ";
                                     $stmt = $mysqli->prepare($ret);
                                     $stmt->execute();
                                     $res = $stmt->get_result();

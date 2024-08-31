@@ -17,7 +17,7 @@ if (isset($_POST['addStaff'])) {
     $staff_password = sha1(md5($_POST['staff_password']));
 
     //Insert Captured information to a database table
-    $postQuery = "INSERT INTO rpos_staff (staff_number, staff_name, staff_email, staff_password) VALUES(?,?,?,?)";
+    $postQuery = "INSERT INTO sms_staff (staff_number, staff_name, staff_email, staff_password) VALUES(?,?,?,?)";
     $postStmt = $mysqli->prepare($postQuery);
     //bind paramaters
     $rc = $postStmt->bind_param('ssss', $staff_number, $staff_name, $staff_email, $staff_password);

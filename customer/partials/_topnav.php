@@ -1,7 +1,7 @@
 <?php
 $customer_id = $_SESSION['customer_id'];
 //$login_id = $_SESSION['login_id'];
-$ret = "SELECT * FROM  rpos_customers  WHERE customer_id = '$customer_id'";
+$ret = "SELECT * FROM  sms_customers  WHERE customer_id = '$customer_id'";
 $stmt = $mysqli->prepare($ret);
 $stmt->execute();
 $res = $stmt->get_result();

@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rpos_admin`
+-- Table structure for table `sms_admin`
 --
 
-CREATE TABLE `rpos_admin` (
+CREATE TABLE `sms_admin` (
   `admin_id` varchar(200) NOT NULL,
   `admin_name` varchar(200) NOT NULL,
   `admin_email` varchar(200) NOT NULL,
@@ -35,19 +35,19 @@ CREATE TABLE `rpos_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `rpos_admin`
+-- Dumping data for table `sms_admin`
 --
 
-INSERT INTO `rpos_admin` (`admin_id`, `admin_name`, `admin_email`, `admin_password`) VALUES
+INSERT INTO `sms_admin` (`admin_id`, `admin_name`, `admin_email`, `admin_password`) VALUES
 ('10e0b6dc958adfb5b094d8935a13aeadbe783c25', 'System Admin', 'admin@mail.com', '10470c3b4b1fed12c3baac014be15fac67c6e815');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rpos_customers`
+-- Table structure for table `sms_customers`
 --
 
-CREATE TABLE `rpos_customers` (
+CREATE TABLE `sms_customers` (
   `customer_id` varchar(200) NOT NULL,
   `customer_name` varchar(200) NOT NULL,
   `customer_phoneno` varchar(200) NOT NULL,
@@ -57,10 +57,10 @@ CREATE TABLE `rpos_customers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `rpos_customers`
+-- Dumping data for table `sms_customers`
 --
 
-INSERT INTO `rpos_customers` (`customer_id`, `customer_name`, `customer_phoneno`, `customer_email`, `customer_password`, `created_at`) VALUES
+INSERT INTO `sms_customers` (`customer_id`, `customer_name`, `customer_phoneno`, `customer_email`, `customer_password`, `created_at`) VALUES
 ('06549ea58afd', 'Ana J. Browne', '4589698780', 'anaj@mail.com', '55c3b5386c486feb662a0785f340938f518d547f', '2022-09-03 12:39:48.523820'),
 ('1fc1f694985d', 'Jane Doe', '2145896547', 'janed@mail.com', 'a69681bcf334ae130217fea4505fd3c994f5683f', '2022-09-03 13:39:13.076592'),
 ('27e4a5bc74c2', 'Tammy R. Polley', '4589654780', 'tammy@mail.com', '55c3b5386c486feb662a0785f340938f518d547f', '2022-09-03 12:37:47.049438'),
@@ -79,10 +79,10 @@ INSERT INTO `rpos_customers` (`customer_id`, `customer_name`, `customer_phoneno`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rpos_orders`
+-- Table structure for table `sms_orders`
 --
 
-CREATE TABLE `rpos_orders` (
+CREATE TABLE `sms_orders` (
   `order_id` varchar(200) NOT NULL,
   `order_code` varchar(200) NOT NULL,
   `customer_id` varchar(200) NOT NULL,
@@ -96,10 +96,10 @@ CREATE TABLE `rpos_orders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `rpos_orders`
+-- Dumping data for table `sms_orders`
 --
 
-INSERT INTO `rpos_orders` (`order_id`, `order_code`, `customer_id`, `customer_name`, `prod_id`, `prod_name`, `prod_price`, `prod_qty`, `order_status`, `created_at`) VALUES
+INSERT INTO `sms_orders` (`order_id`, `order_code`, `customer_id`, `customer_name`, `prod_id`, `prod_name`, `prod_price`, `prod_qty`, `order_status`, `created_at`) VALUES
 ('019661e097', 'AEHM-0653', '06549ea58afd', 'Ana J. Browne', 'bd200ef837', 'Turkish Coffee', '8', '1', 'Paid', '2022-09-03 13:26:00.389027'),
 ('49c1bd8086', 'IUSP-9453', 'fe6bb69bdd29', 'Brian S. Boucher', 'd57cd89073', 'Country Fried Steak', '10', '1', 'Paid', '2022-09-03 11:50:40.812796'),
 ('514ada5047', 'OTEV-8532', '3859d26cd9a5', 'Louise R. Holloman', '0c4b5c0604', 'Spaghetti Bolognese', '15', '1', 'Paid', '2022-09-03 13:13:39.042869'),
@@ -115,10 +115,10 @@ INSERT INTO `rpos_orders` (`order_id`, `order_code`, `customer_id`, `customer_na
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rpos_pass_resets`
+-- Table structure for table `sms_pass_resets`
 --
 
-CREATE TABLE `rpos_pass_resets` (
+CREATE TABLE `sms_pass_resets` (
   `reset_id` int(20) NOT NULL,
   `reset_code` varchar(200) NOT NULL,
   `reset_token` varchar(200) NOT NULL,
@@ -128,19 +128,19 @@ CREATE TABLE `rpos_pass_resets` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `rpos_pass_resets`
+-- Dumping data for table `sms_pass_resets`
 --
 
-INSERT INTO `rpos_pass_resets` (`reset_id`, `reset_code`, `reset_token`, `reset_email`, `reset_status`, `created_at`) VALUES
+INSERT INTO `sms_pass_resets` (`reset_id`, `reset_code`, `reset_token`, `reset_email`, `reset_status`, `created_at`) VALUES
 (1, '63KU9QDGSO', '4ac4cee0a94e82a2aedc311617aa437e218bdf68', 'sysadmin@icofee.org', 'Pending', '2020-08-17 15:20:14.318643');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rpos_payments`
+-- Table structure for table `sms_payments`
 --
 
-CREATE TABLE `rpos_payments` (
+CREATE TABLE `sms_payments` (
   `pay_id` varchar(200) NOT NULL,
   `pay_code` varchar(200) NOT NULL,
   `order_code` varchar(200) NOT NULL,
@@ -151,10 +151,10 @@ CREATE TABLE `rpos_payments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `rpos_payments`
+-- Dumping data for table `sms_payments`
 --
 
-INSERT INTO `rpos_payments` (`pay_id`, `pay_code`, `order_code`, `customer_id`, `pay_amt`, `pay_method`, `created_at`) VALUES
+INSERT INTO `sms_payments` (`pay_id`, `pay_code`, `order_code`, `customer_id`, `pay_amt`, `pay_method`, `created_at`) VALUES
 ('0bf592', '9UMWLG4BF8', 'EJKA-4501', '35135b319ce3', '8', 'Cash', '2022-09-04 16:31:54.525284'),
 ('4423d7', 'QWERT0YUZ1', 'JFMB-0731', '35135b319ce3', '11', 'Cash', '2022-09-04 16:37:03.655834'),
 ('442865', '146XLFSC9V', 'INHG-0875', '9c7fcc067bda', '10', 'Paypal', '2022-09-04 16:35:22.470600'),
@@ -170,10 +170,10 @@ INSERT INTO `rpos_payments` (`pay_id`, `pay_code`, `order_code`, `customer_id`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rpos_products`
+-- Table structure for table `sms_products`
 --
 
-CREATE TABLE `rpos_products` (
+CREATE TABLE `sms_products` (
   `prod_id` varchar(200) NOT NULL,
   `prod_code` varchar(200) NOT NULL,
   `prod_name` varchar(200) NOT NULL,
@@ -184,10 +184,10 @@ CREATE TABLE `rpos_products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `rpos_products`
+-- Dumping data for table `sms_products`
 --
 
-INSERT INTO `rpos_products` (`prod_id`, `prod_code`, `prod_name`, `prod_img`, `prod_desc`, `prod_price`, `created_at`) VALUES
+INSERT INTO `sms_products` (`prod_id`, `prod_code`, `prod_name`, `prod_img`, `prod_desc`, `prod_price`, `created_at`) VALUES
 ('06dc36c1be', 'FCWU-5762', 'Philly Cheesesteak', 'cheesestk.jpg', 'A cheesesteak is a sandwich made from thinly sliced pieces of beefsteak and melted cheese in a long hoagie roll. A popular regional fast food, it has its roots in the U.S. city of Philadelphia, Pennsylvania.', '7', '2022-09-03 11:02:47.738370'),
 ('0c4b5c0604', 'JRZN-9518', 'Spaghetti Bolognese', 'spaghetti_bolognese.jpg', 'Spaghetti bolognese consists of spaghetti (long strings of pasta) with an Italian ragÃ¹ (meat sauce) made with minced beef, bacon and tomatoes, served with Parmesan cheese. Spaghetti bolognese is one of the most popular pasta dishes eaten outside of Italy.', '15', '2022-09-03 10:43:27.610897'),
 ('14c7b6370e', 'QZHM-0391', 'Reuben Sandwich', 'reubensandwich.jpg', 'The Reuben sandwich is a North American grilled sandwich composed of corned beef, Swiss cheese, sauerkraut, and Thousand Island dressing or Russian dressing, grilled between slices of rye bread. It is associated with kosher-style delicatessens, but is not kosher because it combines meat and cheese.', '8', '2022-09-03 10:58:04.069144'),
@@ -218,10 +218,10 @@ INSERT INTO `rpos_products` (`prod_id`, `prod_code`, `prod_name`, `prod_img`, `p
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rpos_staff`
+-- Table structure for table `sms_staff`
 --
 
-CREATE TABLE `rpos_staff` (
+CREATE TABLE `sms_staff` (
   `staff_id` int(20) NOT NULL,
   `staff_name` varchar(200) NOT NULL,
   `staff_number` varchar(200) NOT NULL,
@@ -231,10 +231,10 @@ CREATE TABLE `rpos_staff` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `rpos_staff`
+-- Dumping data for table `sms_staff`
 --
 
-INSERT INTO `rpos_staff` (`staff_id`, `staff_name`, `staff_number`, `staff_email`, `staff_password`, `created_at`) VALUES
+INSERT INTO `sms_staff` (`staff_id`, `staff_name`, `staff_number`, `staff_email`, `staff_password`, `created_at`) VALUES
 (2, 'Cashier James', 'QEUY-9042', 'cashier@mail.com', '10470c3b4b1fed12c3baac014be15fac67c6e815', '2022-09-12 10:13:37.930915');
 
 --
@@ -242,48 +242,48 @@ INSERT INTO `rpos_staff` (`staff_id`, `staff_name`, `staff_number`, `staff_email
 --
 
 --
--- Indexes for table `rpos_admin`
+-- Indexes for table `sms_admin`
 --
-ALTER TABLE `rpos_admin`
+ALTER TABLE `sms_admin`
   ADD PRIMARY KEY (`admin_id`);
 
 --
--- Indexes for table `rpos_customers`
+-- Indexes for table `sms_customers`
 --
-ALTER TABLE `rpos_customers`
+ALTER TABLE `sms_customers`
   ADD PRIMARY KEY (`customer_id`);
 
 --
--- Indexes for table `rpos_orders`
+-- Indexes for table `sms_orders`
 --
-ALTER TABLE `rpos_orders`
+ALTER TABLE `sms_orders`
   ADD PRIMARY KEY (`order_id`),
   ADD KEY `CustomerOrder` (`customer_id`),
   ADD KEY `ProductOrder` (`prod_id`);
 
 --
--- Indexes for table `rpos_pass_resets`
+-- Indexes for table `sms_pass_resets`
 --
-ALTER TABLE `rpos_pass_resets`
+ALTER TABLE `sms_pass_resets`
   ADD PRIMARY KEY (`reset_id`);
 
 --
--- Indexes for table `rpos_payments`
+-- Indexes for table `sms_payments`
 --
-ALTER TABLE `rpos_payments`
+ALTER TABLE `sms_payments`
   ADD PRIMARY KEY (`pay_id`),
   ADD KEY `order` (`order_code`);
 
 --
--- Indexes for table `rpos_products`
+-- Indexes for table `sms_products`
 --
-ALTER TABLE `rpos_products`
+ALTER TABLE `sms_products`
   ADD PRIMARY KEY (`prod_id`);
 
 --
--- Indexes for table `rpos_staff`
+-- Indexes for table `sms_staff`
 --
-ALTER TABLE `rpos_staff`
+ALTER TABLE `sms_staff`
   ADD PRIMARY KEY (`staff_id`);
 
 --
@@ -291,15 +291,15 @@ ALTER TABLE `rpos_staff`
 --
 
 --
--- AUTO_INCREMENT for table `rpos_pass_resets`
+-- AUTO_INCREMENT for table `sms_pass_resets`
 --
-ALTER TABLE `rpos_pass_resets`
+ALTER TABLE `sms_pass_resets`
   MODIFY `reset_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `rpos_staff`
+-- AUTO_INCREMENT for table `sms_staff`
 --
-ALTER TABLE `rpos_staff`
+ALTER TABLE `sms_staff`
   MODIFY `staff_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
@@ -307,11 +307,11 @@ ALTER TABLE `rpos_staff`
 --
 
 --
--- Constraints for table `rpos_orders`
+-- Constraints for table `sms_orders`
 --
-ALTER TABLE `rpos_orders`
-  ADD CONSTRAINT `CustomerOrder` FOREIGN KEY (`customer_id`) REFERENCES `rpos_customers` (`customer_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `ProductOrder` FOREIGN KEY (`prod_id`) REFERENCES `rpos_products` (`prod_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `sms_orders`
+  ADD CONSTRAINT `CustomerOrder` FOREIGN KEY (`customer_id`) REFERENCES `sms_customers` (`customer_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `ProductOrder` FOREIGN KEY (`prod_id`) REFERENCES `sms_products` (`prod_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

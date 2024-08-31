@@ -6,7 +6,7 @@ check_login();
 //Delete Staff
 if (isset($_GET['delete'])) {
   $id = intval($_GET['delete']);
-  $adn = "DELETE FROM  rpos_staff  WHERE  staff_id = ?";
+  $adn = "DELETE FROM  sms_staff  WHERE  staff_id = ?";
   $stmt = $mysqli->prepare($adn);
   $stmt->bind_param('i', $id);
   $stmt->execute();
@@ -59,7 +59,7 @@ require_once('partials/_head.php');
                 </thead>
                 <tbody>
                   <?php
-                  $ret = "SELECT * FROM  rpos_staff ";
+                  $ret = "SELECT * FROM  sms_staff ";
                   $stmt = $mysqli->prepare($ret);
                   $stmt->execute();
                   $res = $stmt->get_result();

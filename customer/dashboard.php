@@ -119,7 +119,7 @@ require_once('partials/_analytics.php');
                 <tbody>
                   <?php
                   $customer_id = $_SESSION['customer_id'];
-                  $ret = "SELECT * FROM  rpos_orders WHERE customer_id = '$customer_id' ORDER BY `rpos_orders`.`created_at` DESC LIMIT 10 ";
+                  $ret = "SELECT * FROM  sms_orders WHERE customer_id = '$customer_id' ORDER BY `sms_orders`.`created_at` DESC LIMIT 10 ";
                   $stmt = $mysqli->prepare($ret);
                   $stmt->execute();
                   $res = $stmt->get_result();
@@ -174,7 +174,7 @@ require_once('partials/_analytics.php');
                 </thead>
                 <tbody>
                   <?php
-                  $ret = "SELECT * FROM   rpos_payments WHERE customer_id ='$customer_id'   ORDER BY `rpos_payments`.`created_at` DESC LIMIT 10 ";
+                  $ret = "SELECT * FROM   sms_payments WHERE customer_id ='$customer_id'   ORDER BY `sms_payments`.`created_at` DESC LIMIT 10 ";
                   $stmt = $mysqli->prepare($ret);
                   $stmt->execute();
                   $res = $stmt->get_result();

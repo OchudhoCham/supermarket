@@ -50,7 +50,7 @@ require_once('partials/_head.php');
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $ret = "SELECT * FROM  rpos_orders ORDER BY `created_at` DESC  ";
+                                    $ret = "SELECT * FROM  sms_orders ORDER BY `created_at` DESC  ";
                                     $stmt = $mysqli->prepare($ret);
                                     $stmt->execute();
                                     $res = $stmt->get_result();

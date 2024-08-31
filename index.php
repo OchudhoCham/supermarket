@@ -91,7 +91,7 @@
     <div class="flex-center position-ref full-height">
         <div class="content">
             <div class="title m-b-md">
-                <img src="munuki-top-logo.png" alt="Munuki Top Supermarket Logo" class="logo">
+                <img src="logo.png" alt="Munuki Top Supermarket Logo" class="logo">
                 <br>
                 <strong><h1 class="title-text">Munuki Top Supermarket</h1></strong>
             </div>

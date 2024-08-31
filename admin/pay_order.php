@@ -23,8 +23,8 @@ if (isset($_POST['pay'])) {
     $order_status = $_GET['order_status'];
 
     //Insert Captured information to a database table
-    $postQuery = "INSERT INTO rpos_payments (pay_id, pay_code, order_code, customer_id, pay_amt, pay_method) VALUES(?,?,?,?,?,?)";
-    $upQry = "UPDATE rpos_orders SET order_status =? WHERE order_code =?";
+    $postQuery = "INSERT INTO sms_payments (pay_id, pay_code, order_code, customer_id, pay_amt, pay_method) VALUES(?,?,?,?,?,?)";
+    $upQry = "UPDATE sms_orders SET order_status =? WHERE order_code =?";
 
     $postStmt = $mysqli->prepare($postQuery);
     $upStmt = $mysqli->prepare($upQry);
@@ -57,7 +57,7 @@ require_once('partials/_head.php');
     <?php
     require_once('partials/_topnav.php');
     $order_code = $_GET['order_code'];
-    $ret = "SELECT * FROM  rpos_orders WHERE order_code ='$order_code' ";
+    $ret = "SELECT * FROM  sms_orders WHERE order_code ='$order_code' ";
     $stmt = $mysqli->prepare($ret);
     $stmt->execute();
     $res = $stmt->get_result();

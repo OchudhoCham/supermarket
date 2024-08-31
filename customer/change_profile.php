@@ -17,7 +17,7 @@ if (isset($_POST['ChangeProfile'])) {
     $customer_id = $_SESSION['customer_id'];
 
     //Insert Captured information to a database table
-    $postQuery = "UPDATE rpos_customers SET customer_name =?, customer_phoneno =?, customer_email =?, customer_password =? WHERE  customer_id =?";
+    $postQuery = "UPDATE sms_customers SET customer_name =?, customer_phoneno =?, customer_email =?, customer_password =? WHERE  customer_id =?";
     $postStmt = $mysqli->prepare($postQuery);
     //bind paramaters
     $rc = $postStmt->bind_param('sssss', $customer_name, $customer_phoneno, $customer_email, $customer_password, $customer_id);
@@ -56,7 +56,7 @@ if (isset($_POST['changePassword'])) {
 
     if (!$error) {
         $customer_id = $_SESSION['customer_id'];
-        $sql = "SELECT * FROM rpos_customers   WHERE customer_id = '$customer_id'";
+        $sql = "SELECT * FROM sms_customers   WHERE customer_id = '$customer_id'";
         $res = mysqli_query($mysqli, $sql);
         if (mysqli_num_rows($res) > 0) {
             $row = mysqli_fetch_assoc($res);
@@ -68,7 +68,7 @@ if (isset($_POST['changePassword'])) {
 
                 $new_password  = sha1(md5($_POST['new_password']));
                 //Insert Captured information to a database table
-                $query = "UPDATE rpos_customers SET  customer_password =? WHERE customer_id =?";
+                $query = "UPDATE sms_customers SET  customer_password =? WHERE customer_id =?";
                 $stmt = $mysqli->prepare($query);
                 //bind paramaters
                 $rc = $stmt->bind_param('si', $new_password, $customer_id);
@@ -100,7 +100,7 @@ require_once('partials/_head.php');
         require_once('partials/_topnav.php');
         $customer_id = $_SESSION['customer_id'];
         //$login_id = $_SESSION['login_id'];
-        $ret = "SELECT * FROM  rpos_customers  WHERE customer_id = '$customer_id'";
+        $ret = "SELECT * FROM  sms_customers  WHERE customer_id = '$customer_id'";
         $stmt = $mysqli->prepare($ret);
         $stmt->execute();
         $res = $stmt->get_result();

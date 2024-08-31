@@ -6,7 +6,7 @@ check_login();
 
 if (isset($_GET['delete'])) {
     $id = intval($_GET['delete']);
-    $adn = "DELETE FROM rpos_products WHERE prod_id = ?";
+    $adn = "DELETE FROM sms_products WHERE prod_id = ?";
     $stmt = $mysqli->prepare($adn);
     if ($stmt) {
         $stmt->bind_param('i', $id); // Changed 's' to 'i' for integer
@@ -65,7 +65,7 @@ require_once('partials/_head.php');
                 </thead>
                 <tbody>
                   <?php
-                  $ret = "SELECT * FROM rpos_products";
+                  $ret = "SELECT * FROM sms_products";
                   $stmt = $mysqli->prepare($ret);
                   $stmt->execute();
                   $res = $stmt->get_result();

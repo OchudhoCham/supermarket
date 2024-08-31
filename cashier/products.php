@@ -5,7 +5,7 @@ include('config/checklogin.php');
 check_login();
 if (isset($_GET['delete'])) {
     $id = intval($_GET['delete']);
-    $adn = "DELETE FROM  rpos_products  WHERE  prod_id = ?";
+    $adn = "DELETE FROM  sms_products  WHERE  prod_id = ?";
     $stmt = $mysqli->prepare($adn);
     $stmt->bind_param('s', $id);
     $stmt->execute();
@@ -64,7 +64,7 @@ require_once('partials/_head.php');
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $ret = "SELECT * FROM  rpos_products  ORDER BY `rpos_products`.`created_at` DESC ";
+                                    $ret = "SELECT * FROM  sms_products  ORDER BY `sms_products`.`created_at` DESC ";
                                     $stmt = $mysqli->prepare($ret);
                                     $stmt->execute();
                                     $res = $stmt->get_result();

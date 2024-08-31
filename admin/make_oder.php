@@ -20,7 +20,7 @@ if (isset($_POST['make'])) {
     $prod_qty = $_POST['prod_qty'];
 
     //Insert Captured information to a database table
-    $postQuery = "INSERT INTO rpos_orders (prod_qty, order_id, order_code, customer_id, customer_name, prod_id, prod_name, prod_price) VALUES(?,?,?,?,?,?,?,?)";
+    $postQuery = "INSERT INTO sms_orders (prod_qty, order_id, order_code, customer_id, customer_name, prod_id, prod_name, prod_price) VALUES(?,?,?,?,?,?,?,?)";
     $postStmt = $mysqli->prepare($postQuery);
     //bind paramaters
     $rc = $postStmt->bind_param('ssssssss', $prod_qty, $order_id, $order_code, $customer_id, $customer_name, $prod_id, $prod_name, $prod_price);
@@ -74,7 +74,7 @@ require_once('partials/_head.php');
                       <option value="">Select Customer Name</option>
                       <?php
                       //Load All Customers
-                      $ret = "SELECT * FROM  rpos_customers ";
+                      $ret = "SELECT * FROM  sms_customers ";
                       $stmt = $mysqli->prepare($ret);
                       $stmt->execute();
                       $res = $stmt->get_result();
@@ -99,7 +99,7 @@ require_once('partials/_head.php');
                 <hr>
                 <?php
                 $prod_id = $_GET['prod_id'];
-                $ret = "SELECT * FROM  rpos_products WHERE prod_id = '$prod_id'";
+                $ret = "SELECT * FROM  sms_products WHERE prod_id = '$prod_id'";
                 $stmt = $mysqli->prepare($ret);
                 $stmt->execute();
                 $res = $stmt->get_result();
