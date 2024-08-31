@@ -47,7 +47,7 @@ require_once('partials/_head.php');
                 </thead>
                 <tbody>
                   <?php
-                  $ret = "SELECT * FROM  rpos_products ";
+                  $ret = "SELECT * FROM  sms_products ";
                   $stmt = $mysqli->prepare($ret);
                   $stmt->execute();
                   $res = $stmt->get_result();

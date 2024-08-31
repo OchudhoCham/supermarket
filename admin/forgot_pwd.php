@@ -7,7 +7,7 @@ if (isset($_POST['reset_pwd'])) {
   if (!filter_var($_POST['reset_email'], FILTER_VALIDATE_EMAIL)) {
     $err = 'Invalid Email';
   }
-  $checkEmail = mysqli_query($mysqli, "SELECT `admin_email` FROM `rpos_admin` WHERE `admin_email` = '" . $_POST['reset_email'] . "'") or exit(mysqli_error($mysqli));
+  $checkEmail = mysqli_query($mysqli, "SELECT `admin_email` FROM `sms_admin` WHERE `admin_email` = '" . $_POST['reset_email'] . "'") or exit(mysqli_error($mysqli));
   if (mysqli_num_rows($checkEmail) > 0) {
     //exit('This email is already being used');
     //Reset Password
@@ -15,7 +15,7 @@ if (isset($_POST['reset_pwd'])) {
     $reset_token = sha1(md5($_POST['reset_token']));
     $reset_status = $_POST['reset_status'];
     $reset_email = $_POST['reset_email'];
-    $query = "INSERT INTO rpos_pass_resets (reset_email, reset_code, reset_token, reset_status) VALUES (?,?,?,?)";
+    $query = "INSERT INTO sms_pass_resets (reset_email, reset_code, reset_token, reset_status) VALUES (?,?,?,?)";
     $reset = $mysqli->prepare($query);
     $rc = $reset->bind_param('ssss', $reset_email, $reset_code, $reset_token, $reset_status);
     $reset->execute();

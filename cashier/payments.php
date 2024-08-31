@@ -6,7 +6,7 @@ check_login();
 //Cancel Order
 if (isset($_GET['cancel'])) {
     $id = $_GET['cancel'];
-    $adn = "DELETE FROM  rpos_orders  WHERE  order_id = ?";
+    $adn = "DELETE FROM  sms_orders  WHERE  order_id = ?";
     $stmt = $mysqli->prepare($adn);
     $stmt->bind_param('s', $id);
     $stmt->execute();
@@ -65,7 +65,7 @@ require_once('partials/_head.php');
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $ret = "SELECT * FROM  rpos_orders WHERE order_status =''  ORDER BY `rpos_orders`.`created_at` DESC  ";
+                                    $ret = "SELECT * FROM  sms_orders WHERE order_status =''  ORDER BY `sms_orders`.`created_at` DESC  ";
                                     $stmt = $mysqli->prepare($ret);
                                     $stmt->execute();
                                     $res = $stmt->get_result();

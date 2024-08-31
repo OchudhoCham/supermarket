@@ -19,7 +19,7 @@ if (isset($_POST['addProduct'])) {
     $prod_price = $_POST['prod_price'];
 
     //Insert Captured information to a database table
-    $postQuery = "INSERT INTO rpos_products (prod_id, prod_code, prod_name, prod_img, prod_desc, prod_price ) VALUES(?,?,?,?,?,?)";
+    $postQuery = "INSERT INTO sms_products (prod_id, prod_code, prod_name, prod_img, prod_desc, prod_price ) VALUES(?,?,?,?,?,?)";
     $postStmt = $mysqli->prepare($postQuery);
     //bind paramaters
     $rc = $postStmt->bind_param('ssssss', $prod_id, $prod_code, $prod_name, $prod_img, $prod_desc, $prod_price);

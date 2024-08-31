@@ -130,7 +130,7 @@ require_once('partials/_analytics.php');
                 </thead>
                 <tbody>
                   <?php
-                  $ret = "SELECT * FROM  rpos_orders ORDER BY `rpos_orders`.`created_at` DESC LIMIT 7 ";
+                  $ret = "SELECT * FROM  sms_orders ORDER BY `sms_orders`.`created_at` DESC LIMIT 7 ";
                   $stmt = $mysqli->prepare($ret);
                   $stmt->execute();
                   $res = $stmt->get_result();
@@ -185,7 +185,7 @@ require_once('partials/_analytics.php');
                 </thead>
                 <tbody>
                   <?php
-                  $ret = "SELECT * FROM   rpos_payments   ORDER BY `rpos_payments`.`created_at` DESC LIMIT 7 ";
+                  $ret = "SELECT * FROM   sms_payments   ORDER BY `sms_payments`.`created_at` DESC LIMIT 7 ";
                   $stmt = $mysqli->prepare($ret);
                   $stmt->execute();
                   $res = $stmt->get_result();

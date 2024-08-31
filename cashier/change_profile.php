@@ -8,7 +8,7 @@ if (isset($_POST['ChangeProfile'])) {
     $staff_id = $_SESSION['staff_id'];
     $staff_name = $_POST['staff_name'];
     $staff_email = $_POST['staff_email'];
-    $Qry = "UPDATE rpos_staff SET staff_name =?, staff_email =? WHERE staff_id =?";
+    $Qry = "UPDATE sms_staff SET staff_name =?, staff_email =? WHERE staff_id =?";
     $postStmt = $mysqli->prepare($Qry);
     //bind paramaters
     $rc = $postStmt->bind_param('ssi', $staff_name, $staff_email, $staff_id);
@@ -45,7 +45,7 @@ if (isset($_POST['changePassword'])) {
 
     if (!$error) {
         $staff_id = $_SESSION['staff_id'];
-        $sql = "SELECT * FROM rpos_staff   WHERE staff_id = '$staff_id'";
+        $sql = "SELECT * FROM sms_staff   WHERE staff_id = '$staff_id'";
         $res = mysqli_query($mysqli, $sql);
         if (mysqli_num_rows($res) > 0) {
             $row = mysqli_fetch_assoc($res);
@@ -57,7 +57,7 @@ if (isset($_POST['changePassword'])) {
 
                 $new_password  = sha1(md5($_POST['new_password']));
                 //Insert Captured information to a database table
-                $query = "UPDATE rpos_staff SET  staff_password =? WHERE staff_id =?";
+                $query = "UPDATE sms_staff SET  staff_password =? WHERE staff_id =?";
                 $stmt = $mysqli->prepare($query);
                 //bind paramaters
                 $rc = $stmt->bind_param('si', $new_password, $staff_id);
@@ -88,7 +88,7 @@ require_once('partials/_head.php');
         require_once('partials/_topnav.php');
         $staff_id = $_SESSION['staff_id'];
         //$login_id = $_SESSION['login_id'];
-        $ret = "SELECT * FROM  rpos_staff  WHERE staff_id = '$staff_id'";
+        $ret = "SELECT * FROM  sms_staff  WHERE staff_id = '$staff_id'";
         $stmt = $mysqli->prepare($ret);
         $stmt->execute();
         $res = $stmt->get_result();

@@ -3,7 +3,7 @@ include('config/pdoconfig.php');
 
 if (!empty($_POST["custName"])) {
     $id = $_POST['custName'];
-    $stmt = $DB_con->prepare("SELECT * FROM  rpos_customers WHERE customer_name = :id");
+    $stmt = $DB_con->prepare("SELECT * FROM  sms_customers WHERE customer_name = :id");
     $stmt->execute(array(':id' => $id));
 ?>
 <?php
