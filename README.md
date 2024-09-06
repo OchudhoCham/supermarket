@@ -1,6 +1,3 @@
-Here's the full README documentation with proper markdown tags and the complete installation steps. I've included the additional steps you started and ensured the entire README is correctly formatted.
-
-```markdown
 # Supermarket Management System
 
 ## Table of Contents
@@ -11,13 +8,10 @@ Here's the full README documentation with proper markdown tags and the complete 
 5. [Technologies Used](#technologies-used)
 6. [Development Methodology](#development-methodology)
 7. [Contributing](#contributing)
-8. [License](#license)
 9. [Contact](#contact)
 
 ## Introduction
 This project is a **Supermarket Management System**, developed as my final year graduation project in fulfillment of the requirements for my Bachelor's degree in Computer Science at the University of Juba. The system is designed to automate the operations of a supermarket, including product management, order placement, and payment processing. It features different user roles, such as **Admin**, **Cashier**, and **Customer**, each with its own specific functionality.
-
-This project demonstrates my proficiency in web development using **PHP**, **MySQL**, and **modern web technologies**, and highlights my ability to implement real-world solutions to everyday business problems.
 
 ## Features
 - **Admin:**
@@ -87,9 +81,6 @@ This project follows the **Waterfall Model** of software development. Each phase
 
 ## Contributing
 This project is open for contributions. If you have any suggestions or would like to improve the system, feel free to open an issue or submit a pull request.
-
-## License
-This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more details.
 
 ## Contact
 For any inquiries or further information regarding this project, feel free to contact me:
