@@ -6,9 +6,8 @@
 3. [Installation](#installation)
 4. [Usage](#usage)
 5. [Technologies Used](#technologies-used)
-6. [Development Methodology](#development-methodology)
-7. [Contributing](#contributing)
-9. [Contact](#contact)
+6. [Contributing](#contributing)
+7. [Contact](#contact)
 
 ## Introduction
 This project is a **Supermarket Management System**, developed as my final year graduation project in fulfillment of the requirements for my Bachelor's degree in Computer Science at the University of Juba. The system is designed to automate the operations of a supermarket, including product management, order placement, and payment processing. It features different user roles, such as **Admin**, **Cashier**, and **Customer**, each with its own specific functionality.
@@ -72,12 +71,6 @@ This project is a **Supermarket Management System**, developed as my final year 
 
 ## Development Methodology
 This project follows the **Waterfall Model** of software development. Each phase was completed sequentially, from requirements gathering to testing and deployment.
-
-1. **Requirement Analysis:** Detailed discussion of the supermarket's requirements.
-2. **Design:** Creation of system architecture, database schema, and wireframes.
-3. **Implementation:** Development of the system in PHP and MySQL.
-4. **Testing:** Functionality, performance, and security testing.
-5. **Deployment:** Setup on a local server using XAMPP.
 
 ## Contributing
 This project is open for contributions. If you have any suggestions or would like to improve the system, feel free to open an issue or submit a pull request.
