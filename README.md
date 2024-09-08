@@ -69,9 +69,6 @@ This project is a **Supermarket Management System**, developed as my final year 
 - **Database:** MySQL
 - **Web Server:** Apache (via XAMPP)
 
-## Development Methodology
-This project follows the **Waterfall Model** of software development. Each phase was completed sequentially, from requirements gathering to testing and deployment.
-
 ## Contributing
 This project is open for contributions. If you have any suggestions or would like to improve the system, feel free to open an issue or submit a pull request.
 
