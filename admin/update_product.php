@@ -19,7 +19,7 @@ if (isset($_POST['UpdateProduct'])) {
     $prod_price = $_POST['prod_price'];
 
     //Insert Captured information to a database table
-    $postQuery = "UPDATE sms_products SET prod_code =?, prod_name =?, prod_img =?, prod_desc =?, prod_price =? WHERE prod_id = ?";
+    $postQuery = "UPDATE rpos_products SET prod_code =?, prod_name =?, prod_img =?, prod_desc =?, prod_price =? WHERE prod_id = ?";
     $postStmt = $mysqli->prepare($postQuery);
     //bind paramaters
     $rc = $postStmt->bind_param('ssssss', $prod_code, $prod_name, $prod_img, $prod_desc, $prod_price, $update);
@@ -46,7 +46,7 @@ require_once('partials/_head.php');
     <?php
     require_once('partials/_topnav.php');
     $update = $_GET['update'];
-    $ret = "SELECT * FROM  sms_products WHERE prod_id = '$update' ";
+    $ret = "SELECT * FROM  rpos_products WHERE prod_id = '$update' ";
     $stmt = $mysqli->prepare($ret);
     $stmt->execute();
     $res = $stmt->get_result();
