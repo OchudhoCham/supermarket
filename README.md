@@ -18,7 +18,7 @@ This project is a **Supermarket Management System**, developed as my final year 
   - Manage products (Add, Update, Delete products)
   - Process orders and payments
   - View order history and generate receipts
-- **Cashier:**
+- **Cashier(Stuff):**
   - Process customer orders
   - Manage products
   - Handle payments and generate receipts
@@ -60,7 +60,7 @@ This project is a **Supermarket Management System**, developed as my final year 
 
 ## Usage
 - **Admin Panel**: Access the admin panel at `/admin` for managing users, products, orders, and payments.
-- **Cashier**: The cashier can log in to process customer payments and manage product data.
+- **Cashier(Stuff)**: The cashier can log in to process customer payments and manage product data.
 - **Customer**: Customers can register, log in, browse products, and place orders.
 
 ## Technologies Used
