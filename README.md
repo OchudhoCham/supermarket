@@ -68,7 +68,8 @@ This project is a **Supermarket Management System**, developed as my final year 
 - **Backend:** PHP
 - **Database:** MySQL
 - **Web Server:** Apache (via XAMPP)
-
+##credintials: Username: admin
+Password: 123456
 ## Contributing
 This project is open for contributions. If you have any suggestions or would like to improve the system, feel free to open an issue or submit a pull request.
 
